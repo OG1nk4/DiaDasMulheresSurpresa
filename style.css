@@ -24,20 +24,39 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, .romantic-title, .letter-title {
+h1,
+h2,
+h3,
+.romantic-title,
+.letter-title {
     font-family: 'Dancing Script', cursive;
 }
 
 /* Animações */
 @keyframes fadeInSlideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes pulseHeart {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.15); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Telas Gerais */
@@ -195,9 +214,17 @@ section {
     animation: fadeInSlideUp 1s ease-out forwards;
 }
 
-section:nth-child(2) { animation-delay: 0.4s; }
-section:nth-child(3) { animation-delay: 0.6s; }
-section:nth-child(4) { animation-delay: 0.8s; }
+section:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+section:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+section:nth-child(4) {
+    animation-delay: 0.8s;
+}
 
 .section-title {
     text-align: center;
@@ -218,14 +245,14 @@ section:nth-child(4) { animation-delay: 0.8s; }
     overflow: hidden;
     position: relative;
     aspect-ratio: 1 / 1;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     transition: var(--transition);
     cursor: pointer;
 }
 
 .gallery-item:hover {
     transform: scale(1.03) translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .gallery-item img {
@@ -242,12 +269,13 @@ section:nth-child(4) { animation-delay: 0.8s; }
 /* Seção de Vídeo */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+    padding-bottom: 56.25%;
+    /* Aspect Ratio 16:9 */
     height: 0;
     overflow: hidden;
     width: 100%;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     background: #000;
 }
 
@@ -328,12 +356,58 @@ footer {
         max-width: 600px;
         margin: 0 auto;
     }
-    
+
     .letter-card {
         padding: 60px;
     }
-    
+
     .login-container {
         padding: 50px 40px;
     }
+}
+
+/* ========================================= */
+/* EFEITOS ESPECIAIS (Corações e Scroll)     */
+/* ========================================= */
+
+/* Corações flutuantes */
+.floating-heart {
+    position: fixed;
+    top: -50px;
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: var(--heart-opacity, 0.7);
+    }
+
+    80% {
+        opacity: var(--heart-opacity, 0.7);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Scroll Reveal (Seções aparecendo ao rolar) */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
