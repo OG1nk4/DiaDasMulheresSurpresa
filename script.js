@@ -148,23 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =========================================
-    // 4. LÓGICA DO CARTÃO DE VÍDEO ESPECIAL
+    // 4. LÓGICA DO CARTÃO DE VÍDEO ESPECIAL (Removida)
     // =========================================
-    const specialVideoCard = document.getElementById('special-video-card');
-    const vid02Player = document.getElementById('vid02-player');
-
-    if (specialVideoCard && vid02Player) {
-        specialVideoCard.addEventListener('click', function () {
-            this.classList.toggle('flipped');
-
-            if (this.classList.contains('flipped')) {
-                // Tentar tocar o vídeo com som
-                vid02Player.volume = 1.0;
-                vid02Player.play().catch(err => console.log("Erro ao reproduzir o vídeo:", err));
-            } else {
-                vid02Player.pause();
-            }
-        });
-    }
 
 });

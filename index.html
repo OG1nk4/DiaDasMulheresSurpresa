@@ -50,7 +50,7 @@
                         <div class="peg"></div>
                         <div class="flip-card-front"
                             style="position: relative; cursor: default; height: 300px; width: 240px; margin-top: 15px;">
-                            <div class="image-area" style="background: #000;">
+                            <div class="image-area">
                                 <img src="images/foto01.jpg" alt="Onde tudo começou" style="object-fit: contain;">
                             </div>
                             <div class="polaroid-footer" style="padding-top: 25px;">O Início</div>
@@ -69,25 +69,17 @@
                         </div>
                     </div>
 
-                    <!-- Cartão 3: VID01.mp4 -->
-                    <div class="polaroid-wrapper">
-                        <div class="peg"></div>
-                        <div class="flip-card-front"
-                            style="position: relative; cursor: default; height: 300px; width: 240px; margin-top: 15px;">
-                            <div class="image-area" style="background: #000; overflow: hidden; position: relative;">
-                                <video width="100%" height="100%"
-                                    style="object-fit: cover; display: block; position: absolute; top:0; left:0; transform: translateZ(1px);"
-                                    autoplay loop muted playsinline preload="auto">
-                                    <source src="videos/VID01.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="polaroid-footer" style="padding-top: 25px;">Sempre juntos</div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
             <p class="swipe-hint">Desliza para os lados para ver mais memórias 👉</p>
+
+            <div class="video-container"
+                style="border: 4px solid var(--primary-color); border-radius: 20px; overflow: hidden; margin-top: 30px;">
+                <video width="100%" height="100%" controls playsinline>
+                    <source src="videos/VID01.mp4" type="video/mp4">
+                    Seu navegador não suporta o formato de vídeo.
+                </video>
+            </div>
         </section>
 
         <!-- VARAL 2: LOGO APÓS, NÃO SE DESGRUDAMOS MAIS -->
@@ -126,7 +118,7 @@
                         <div class="peg"></div>
                         <div class="flip-card-front"
                             style="position: relative; cursor: default; height: 300px; width: 240px; margin-top: 15px;">
-                            <div class="image-area" style="background: #000;">
+                            <div class="image-area">
                                 <img src="images/foto05.jpg" alt="Memória" style="object-fit: contain;">
                             </div>
                             <div class="polaroid-footer" style="padding-top: 25px;">Alegria</div>
@@ -145,32 +137,29 @@
                         </div>
                     </div>
 
-                    <!-- Cartão 5: foto08.jpg + VID02.mp4 -->
+                    <!-- Cartão 5: foto08.jpg -->
                     <div class="polaroid-wrapper">
                         <div class="peg"></div>
-                        <div class="flip-card" id="special-video-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <div class="image-area">
-                                        <img src="images/foto08.jpg" alt="Surpresa">
-                                    </div>
-                                    <div class="polaroid-footer">Toca para um vídeo ↺</div>
-                                </div>
-                                <div class="flip-card-back"
-                                    style="padding: 10px; border: none; background: #000; display: flex; align-items: center; justify-content: center;">
-                                    <video id="vid02-player"
-                                        style="width: 100%; height: auto; max-height: 100%; object-fit: contain; border-radius: 4px; transform: translateZ(1px);"
-                                        controls loop playsinline preload="auto">
-                                        <source src="videos/VID02.mp4" type="video/mp4">
-                                    </video>
-                                </div>
+                        <div class="flip-card-front"
+                            style="position: relative; cursor: default; height: 300px; width: 240px; margin-top: 15px;">
+                            <div class="image-area">
+                                <img src="images/foto08.jpg" alt="Surpresa">
                             </div>
+                            <div class="polaroid-footer" style="padding-top: 25px;">Surpresa pra você!</div>
                         </div>
                     </div>
 
                 </div>
             </div>
             <p class="swipe-hint">Desliza para os lados para ver mais memórias 👉</p>
+
+            <div class="video-container"
+                style="border: 4px solid var(--primary-color); border-radius: 20px; overflow: hidden; margin-top: 30px;">
+                <video width="100%" height="100%" controls playsinline>
+                    <source src="videos/VID02.mp4" type="video/mp4">
+                    Seu navegador não suporta o formato de vídeo.
+                </video>
+            </div>
         </section>
 
         <!-- VARAL 3: MAIS MEMÓRIAS (Com Flip e Sem Data) -->
