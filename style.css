@@ -460,6 +460,15 @@ footer {
 /* ========================================= */
 /* EFEITOS ESPECIAIS                         */
 /* ========================================= */
+.romantic-divider {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    width: 60%;
+    margin: 0 auto;
+    opacity: 0.6;
+}
+
 .reveal {
     opacity: 0;
     transform: translateY(40px);

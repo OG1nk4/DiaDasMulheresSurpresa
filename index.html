@@ -33,21 +33,170 @@
     <!-- Página Principal (Varal e Fundo Rosa) -->
     <div id="main-content" class="screen main-theme">
         <header class="hero reveal">
-            <h1 class="romantic-title">O Nosso Varal de Memórias</h1>
+            <h1 class="romantic-title">A Nossa História</h1>
             <p class="subtitle">Cada momento ao teu lado é um presente que guardo no coração...</p>
         </header>
 
-        <!-- SECÇÃO DO VARAL DO TEMPO -->
+        <!-- VARAL 1: ONDE TUDO COMEÇOU -->
         <section class="varal-section reveal">
+            <h2 class="section-title">Onde tudo começou</h2>
             <div class="varal-scroll-area">
                 <div class="varal-track">
                     <!-- Fio do Varal -->
                     <div class="wire"></div>
 
-                    <!-- Cartões Polaroids no Varal -->
-                    <!-- Cartão 1 -->
+                    <!-- Cartão 1: foto01.jpg -->
                     <div class="polaroid-wrapper">
-                        <div class="date-label">16 Set 2025</div>
+                        <div class="peg"></div>
+                        <div class="flip-card-front"
+                            style="position: relative; cursor: default; height: 300px; width: 240px; margin-top: 15px;">
+                            <div class="image-area">
+                                <img src="images/foto01.jpg" alt="Onde tudo começou">
+                            </div>
+                            <div class="polaroid-footer" style="padding-top: 25px;">O Início</div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 2: foto02.jpg -->
+                    <div class="polaroid-wrapper">
+                        <div class="peg"></div>
+                        <div class="flip-card-front"
+                            style="position: relative; cursor: default; height: 300px; width: 240px; margin-top: 15px;">
+                            <div class="image-area">
+                                <img src="images/foto02.jpg" alt="Memória especial">
+                            </div>
+                            <div class="polaroid-footer" style="padding-top: 25px;">Primeiros Momentos</div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 3: VID01.mp4 -->
+                    <div class="polaroid-wrapper">
+                        <div class="peg"></div>
+                        <div class="flip-card-front"
+                            style="position: relative; cursor: default; height: 300px; width: 240px; margin-top: 15px;">
+                            <div class="image-area" style="background: #000;">
+                                <video width="100%" height="100%" style="object-fit: cover;" autoplay loop muted
+                                    playsinline>
+                                    <source src="videos/VID01.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="polaroid-footer" style="padding-top: 25px;">Sempre juntos</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <p class="swipe-hint">Desliza para os lados para ver mais memórias 👉</p>
+        </section>
+
+        <!-- VARAL 2: LOGO APÓS, NÃO SE DESGRUDAMOS MAIS -->
+        <section class="varal-section reveal">
+            <h2 class="section-title">Logo após, não nos desgrudamos mais.</h2>
+            <div class="varal-scroll-area">
+                <div class="varal-track">
+                    <div class="wire"></div>
+
+                    <!-- Cartão 1: foto03.jpg -->
+                    <div class="polaroid-wrapper">
+                        <div class="peg"></div>
+                        <div class="flip-card-front"
+                            style="position: relative; cursor: default; height: 300px; width: 240px; margin-top: 15px;">
+                            <div class="image-area">
+                                <img src="images/foto03.jpg" alt="Memória">
+                            </div>
+                            <div class="polaroid-footer" style="padding-top: 25px;">O teu sorriso</div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 2: foto04.jpg -->
+                    <div class="polaroid-wrapper">
+                        <div class="peg"></div>
+                        <div class="flip-card-front"
+                            style="position: relative; cursor: default; height: 300px; width: 240px; margin-top: 15px;">
+                            <div class="image-area">
+                                <img src="images/foto04.jpg" alt="Memória">
+                            </div>
+                            <div class="polaroid-footer" style="padding-top: 25px;">Momentos únicos</div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 3: foto05.jpg -->
+                    <div class="polaroid-wrapper">
+                        <div class="peg"></div>
+                        <div class="flip-card-front"
+                            style="position: relative; cursor: default; height: 300px; width: 240px; margin-top: 15px;">
+                            <div class="image-area">
+                                <img src="images/foto05.jpg" alt="Memória">
+                            </div>
+                            <div class="polaroid-footer" style="padding-top: 25px;">Alegria</div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 4: foto06.jpg -->
+                    <div class="polaroid-wrapper">
+                        <div class="peg"></div>
+                        <div class="flip-card-front"
+                            style="position: relative; cursor: default; height: 300px; width: 240px; margin-top: 15px;">
+                            <div class="image-area">
+                                <img src="images/foto06.jpg" alt="Memória">
+                            </div>
+                            <div class="polaroid-footer" style="padding-top: 25px;">Meu amor</div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 5: foto08.jpg + VID02.mp4 -->
+                    <div class="polaroid-wrapper">
+                        <div class="peg"></div>
+                        <div class="flip-card" id="special-video-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="image-area">
+                                        <img src="images/foto08.jpg" alt="Surpresa">
+                                    </div>
+                                    <div class="polaroid-footer">Toca para um vídeo ↺</div>
+                                </div>
+                                <div class="flip-card-back" style="padding: 10px; border: none; background: #000;">
+                                    <video id="vid02-player" width="100%" height="100%"
+                                        style="object-fit: cover; border-radius: 4px;" loop playsinline>
+                                        <source src="videos/VID02.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <p class="swipe-hint">Desliza para os lados para ver mais memórias 👉</p>
+        </section>
+
+        <!-- VARAL 3: MAIS MEMÓRIAS (Com Flip e Sem Data) -->
+        <section class="varal-section reveal">
+            <h2 class="section-title">Ainda tem mais...</h2>
+            <div class="varal-scroll-area">
+                <div class="varal-track">
+                    <div class="wire"></div>
+
+                    <!-- Cartão: foto07.jpg -->
+                    <div class="polaroid-wrapper">
+                        <div class="peg"></div>
+                        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="image-area">
+                                        <img src="images/foto07.jpg" alt="Memória">
+                                    </div>
+                                    <div class="polaroid-footer">Toca para virar ↺</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Tão linda!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão: IMG-2025... -->
+                    <div class="polaroid-wrapper">
                         <div class="peg"></div>
                         <div class="flip-card" onclick="this.classList.toggle('flipped')">
                             <div class="flip-card-inner">
@@ -58,15 +207,14 @@
                                     <div class="polaroid-footer">Toca para virar ↺</div>
                                 </div>
                                 <div class="flip-card-back">
-                                    <p>O começo de uma história linda nas nossas vidas...</p>
+                                    <p>O começo de uma história linda...</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Cartão 2 -->
+                    <!-- Cartão: IMG-2025... -->
                     <div class="polaroid-wrapper">
-                        <div class="date-label">21 Set 2025</div>
                         <div class="peg"></div>
                         <div class="flip-card" onclick="this.classList.toggle('flipped')">
                             <div class="flip-card-inner">
@@ -83,9 +231,8 @@
                         </div>
                     </div>
 
-                    <!-- Cartão 3 -->
+                    <!-- Cartão WhatsApp 1 -->
                     <div class="polaroid-wrapper">
-                        <div class="date-label">19 Out 2025</div>
                         <div class="peg"></div>
                         <div class="flip-card" onclick="this.classList.toggle('flipped')">
                             <div class="flip-card-inner">
@@ -103,9 +250,8 @@
                         </div>
                     </div>
 
-                    <!-- Cartão 4 -->
+                    <!-- Cartão WhatsApp 2 -->
                     <div class="polaroid-wrapper">
-                        <div class="date-label">19 Out 2025</div>
                         <div class="peg"></div>
                         <div class="flip-card" onclick="this.classList.toggle('flipped')">
                             <div class="flip-card-inner">
@@ -123,9 +269,8 @@
                         </div>
                     </div>
 
-                    <!-- Cartão 5 -->
+                    <!-- Cartão WhatsApp 3 -->
                     <div class="polaroid-wrapper">
-                        <div class="date-label">19 Out 2025</div>
                         <div class="peg"></div>
                         <div class="flip-card" onclick="this.classList.toggle('flipped')">
                             <div class="flip-card-inner">
@@ -143,9 +288,8 @@
                         </div>
                     </div>
 
-                    <!-- Cartão 6 -->
+                    <!-- Cartão WhatsApp 4 -->
                     <div class="polaroid-wrapper">
-                        <div class="date-label">19 Out 2025</div>
                         <div class="peg"></div>
                         <div class="flip-card" onclick="this.classList.toggle('flipped')">
                             <div class="flip-card-inner">
@@ -163,9 +307,8 @@
                         </div>
                     </div>
 
-                    <!-- Cartão 7 -->
+                    <!-- Cartão WhatsApp 5 -->
                     <div class="polaroid-wrapper">
-                        <div class="date-label">19 Out 2025</div>
                         <div class="peg"></div>
                         <div class="flip-card" onclick="this.classList.toggle('flipped')">
                             <div class="flip-card-inner">
@@ -183,9 +326,8 @@
                         </div>
                     </div>
 
-                    <!-- Cartão 8 -->
+                    <!-- Cartão WhatsApp 6 -->
                     <div class="polaroid-wrapper">
-                        <div class="date-label">19 Out 2025</div>
                         <div class="peg"></div>
                         <div class="flip-card" onclick="this.classList.toggle('flipped')">
                             <div class="flip-card-inner">
@@ -203,9 +345,8 @@
                         </div>
                     </div>
 
-                    <!-- Cartão 9 -->
+                    <!-- Cartão WhatsApp 7 -->
                     <div class="polaroid-wrapper">
-                        <div class="date-label">19 Out 2025</div>
                         <div class="peg"></div>
                         <div class="flip-card" onclick="this.classList.toggle('flipped')">
                             <div class="flip-card-inner">
@@ -223,9 +364,8 @@
                         </div>
                     </div>
 
-                    <!-- Cartão 10 -->
+                    <!-- Cartão WhatsApp 8 -->
                     <div class="polaroid-wrapper">
-                        <div class="date-label">19 Out 2025</div>
                         <div class="peg"></div>
                         <div class="flip-card" onclick="this.classList.toggle('flipped')">
                             <div class="flip-card-inner">
@@ -248,9 +388,9 @@
             <p class="swipe-hint">Desliza para os lados para ver mais memórias 👉</p>
         </section>
 
-        <!-- VIDEOS LOCAIS -->
+        <!-- VIDEOS LOCAIS (Organizados e Mudos) -->
         <section class="gallery-section reveal">
-            <h2 class="section-title">Mais Recordações</h2>
+            <h2 class="section-title">Recordações em vídeo</h2>
             <div class="gallery-grid">
                 <div class="gallery-item video-item">
                     <video width="100%" autoplay loop muted playsinline>
@@ -275,6 +415,41 @@
                         <source src="videos/Vídeo do WhatsApp de 2025-10-19 à(s) 20.10.55_d7e56406.mp4"
                             type="video/mp4">
                     </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- VÍDEO DO PEDIDO DE NAMORO -->
+        <section class="video-section reveal" style="margin-top: 50px;">
+            <h2 class="section-title" style="margin-bottom: 5px;">E o melhor dia da minha vida...</h2>
+            <p
+                style="text-align: center; font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--text-muted); margin-bottom: 25px;">
+                01/01/2025</p>
+            <div class="video-container"
+                style="border: 4px solid var(--primary-color); border-radius: 20px; overflow: hidden;">
+                <video width="100%" height="100%" controls playsinline>
+                    <source src="videos/VIDNAMORO.mp4" type="video/mp4">
+                    Seu navegador não suporta o formato de vídeo.
+                </video>
+            </div>
+        </section>
+
+        <!-- DIVISOR E FOTOS FINAIS -->
+        <section class="reveal" style="margin-top: 60px; text-align: center;">
+            <hr class="romantic-divider">
+            <p
+                style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 500; color: var(--primary-color); margin: 30px auto; max-width: 600px; line-height: 1.6;">
+                Você é e sempre será a mulher mais forte da minha vida.<br>Sou muito orgulhoso de ter você ao meu lado.
+            </p>
+
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <div
+                    style="width: 280px; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
+                    <img src="images/foto09.jpeg" alt="Meu orgulho" style="width: 100%; height: auto; display: block;">
+                </div>
+                <div
+                    style="width: 280px; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
+                    <img src="images/foto10.jpeg" alt="Meu orgulho" style="width: 100%; height: auto; display: block;">
                 </div>
             </div>
         </section>
