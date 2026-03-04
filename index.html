@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para o Meu Amor</title>
+    <title>Para a Dona do Meu Coração</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,136 +14,301 @@
 </head>
 
 <body>
-    <!-- Tela de Bloqueio (Login) -->
-    <div id="login-screen" class="screen active flex-center fade-in">
-        <div class="login-container">
-            <div class="heart-icon">❤️</div>
-            <h1>Nosso Cantinho</h1>
-            <p>Insira a data especial para entrar</p>
-            <div class="input-group">
+    <!-- Ecrã de Bloqueio (Login Escuro) -->
+    <div id="login-screen" class="screen dark-theme active flex-center">
+        <div class="login-container password-box">
+            <!-- Texto com efeito Máquina de Escrever -->
+            <h2 id="typewriter-text" class="typewriter-text"></h2>
+
+            <div id="login-form" class="input-group hidden">
                 <input type="password" id="password" placeholder="DDMMAAAA" maxlength="8">
-                <button id="login-btn">Acessar</button>
+                <button id="login-btn">Aceder</button>
             </div>
-            <p id="error-message" class="error-message">Ops, data errada! Tente de novo, meu amor 🥺</p>
+            <p id="error-message" class="error-message">Ops! Data incorreta. Volta a tentar, meu amor 🥺</p>
         </div>
     </div>
 
-    <!-- Conteúdo Principal -->
-    <div id="main-content" class="screen">
-        <header class="hero">
-            <h1 class="romantic-title">Feliz Dia das Mulheres, Meu Amor!</h1>
-            <p class="subtitle">Fiz esse cantinho especial só para nós...</p>
+    <!-- Página Principal (Varal e Fundo Rosa) -->
+    <div id="main-content" class="screen main-theme">
+        <header class="hero reveal">
+            <h1 class="romantic-title">O Nosso Varal de Memórias</h1>
+            <p class="subtitle">Cada momento ao teu lado é um presente que guardo no coração...</p>
         </header>
 
+        <!-- SECÇÃO DO VARAL DO TEMPO -->
+        <section class="varal-section reveal">
+            <div class="varal-scroll-area">
+                <div class="varal-track">
+                    <!-- Fio do Varal -->
+                    <div class="wire"></div>
+
+                    <!-- Cartões Polaroids no Varal -->
+                    <!-- Cartão 1 -->
+                    <div class="polaroid-wrapper">
+                        <div class="date-label">16 Set 2025</div>
+                        <div class="peg"></div>
+                        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="image-area">
+                                        <img src="images/IMG-20250916-WA0029.jpg" alt="Memória">
+                                    </div>
+                                    <div class="polaroid-footer">Toca para virar ↺</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>O começo de uma história linda nas nossas vidas...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 2 -->
+                    <div class="polaroid-wrapper">
+                        <div class="date-label">21 Set 2025</div>
+                        <div class="peg"></div>
+                        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="image-area">
+                                        <img src="images/IMG-20250921-WA0030.jpg" alt="Memória">
+                                    </div>
+                                    <div class="polaroid-footer">Toca para virar ↺</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Mais um momento super especial!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 3 -->
+                    <div class="polaroid-wrapper">
+                        <div class="date-label">19 Out 2025</div>
+                        <div class="peg"></div>
+                        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="image-area">
+                                        <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.12_927a3b48.jpg"
+                                            alt="Memória">
+                                    </div>
+                                    <div class="polaroid-footer">Toca para virar ↺</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Um sorriso que ilumina os meus dias.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 4 -->
+                    <div class="polaroid-wrapper">
+                        <div class="date-label">19 Out 2025</div>
+                        <div class="peg"></div>
+                        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="image-area">
+                                        <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.13_c46206c5.jpg"
+                                            alt="Memória">
+                                    </div>
+                                    <div class="polaroid-footer">Toca para virar ↺</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Momentos inesquecíveis ao teu lado.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 5 -->
+                    <div class="polaroid-wrapper">
+                        <div class="date-label">19 Out 2025</div>
+                        <div class="peg"></div>
+                        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="image-area">
+                                        <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.13_dd0144fa.jpg"
+                                            alt="Memória">
+                                    </div>
+                                    <div class="polaroid-footer">Toca para virar ↺</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Amo-te muito mais a cada dia.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 6 -->
+                    <div class="polaroid-wrapper">
+                        <div class="date-label">19 Out 2025</div>
+                        <div class="peg"></div>
+                        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="image-area">
+                                        <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.14_0201a744.jpg"
+                                            alt="Memória">
+                                    </div>
+                                    <div class="polaroid-footer">Toca para virar ↺</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Sons do amor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 7 -->
+                    <div class="polaroid-wrapper">
+                        <div class="date-label">19 Out 2025</div>
+                        <div class="peg"></div>
+                        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="image-area">
+                                        <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.14_215fe352.jpg"
+                                            alt="Memória">
+                                    </div>
+                                    <div class="polaroid-footer">Toca para virar ↺</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>A dona do meu coração.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 8 -->
+                    <div class="polaroid-wrapper">
+                        <div class="date-label">19 Out 2025</div>
+                        <div class="peg"></div>
+                        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="image-area">
+                                        <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.14_efe60211.jpg"
+                                            alt="Memória">
+                                    </div>
+                                    <div class="polaroid-footer">Toca para virar ↺</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>A minha melhor escolha!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 9 -->
+                    <div class="polaroid-wrapper">
+                        <div class="date-label">19 Out 2025</div>
+                        <div class="peg"></div>
+                        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="image-area">
+                                        <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.24_59536a35.jpg"
+                                            alt="Memória">
+                                    </div>
+                                    <div class="polaroid-footer">Toca para virar ↺</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Paz.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão 10 -->
+                    <div class="polaroid-wrapper">
+                        <div class="date-label">19 Out 2025</div>
+                        <div class="peg"></div>
+                        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="image-area">
+                                        <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.24_ed778655.jpg"
+                                            alt="Memória">
+                                    </div>
+                                    <div class="polaroid-footer">Toca para virar ↺</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Sempre juntos!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <p class="swipe-hint">Desliza para os lados para ver mais memórias 👉</p>
+        </section>
+
+        <!-- VIDEOS LOCAIS -->
         <section class="gallery-section reveal">
-            <h2 class="section-title">Nossos Momentos</h2>
+            <h2 class="section-title">Mais Recordações</h2>
             <div class="gallery-grid">
-
-                <div class="gallery-item">
-                    <img src="images/IMG-20250916-WA0029.jpg" alt="Nosso Momento">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/IMG-20250921-WA0030.jpg" alt="Nosso Momento">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.12_927a3b48.jpg" alt="Nosso Momento">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.13_c46206c5.jpg" alt="Nosso Momento">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.13_dd0144fa.jpg" alt="Nosso Momento">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.14_0201a744.jpg" alt="Nosso Momento">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.14_215fe352.jpg" alt="Nosso Momento">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.14_efe60211.jpg" alt="Nosso Momento">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.24_59536a35.jpg" alt="Nosso Momento">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Imagem do WhatsApp de 2025-10-19 à(s) 20.32.24_ed778655.jpg" alt="Nosso Momento">
-                </div>
-
-                <!-- Vídeos Locais -->
-                <div class="gallery-item" style="display: flex; align-items: center; background: #000;">
+                <div class="gallery-item video-item">
                     <video width="100%" autoplay loop muted playsinline>
                         <source src="videos/Vídeo do WhatsApp de 2025-10-19 à(s) 20.09.11_e71205e1.mp4"
                             type="video/mp4">
                     </video>
                 </div>
-                <div class="gallery-item" style="display: flex; align-items: center; background: #000;">
+                <div class="gallery-item video-item">
                     <video width="100%" autoplay loop muted playsinline>
                         <source src="videos/Vídeo do WhatsApp de 2025-10-19 à(s) 20.10.49_01f4fcb1.mp4"
                             type="video/mp4">
                     </video>
                 </div>
-                <div class="gallery-item" style="display: flex; align-items: center; background: #000;">
+                <div class="gallery-item video-item">
                     <video width="100%" autoplay loop muted playsinline>
                         <source src="videos/Vídeo do WhatsApp de 2025-10-19 à(s) 20.10.53_847ddcd3.mp4"
                             type="video/mp4">
                     </video>
                 </div>
-                <div class="gallery-item" style="display: flex; align-items: center; background: #000;">
+                <div class="gallery-item video-item">
                     <video width="100%" autoplay loop muted playsinline>
                         <source src="videos/Vídeo do WhatsApp de 2025-10-19 à(s) 20.10.55_d7e56406.mp4"
                             type="video/mp4">
                     </video>
                 </div>
-
             </div>
         </section>
 
+        <!-- NOSSA MÚSICA YOUTUBE -->
         <section class="video-section reveal">
-            <h2 class="section-title">Nossa Música</h2>
+            <h2 class="section-title">A Nossa Música</h2>
             <div class="video-container">
                 <!-- Charlie Brown Jr - Como tudo deve ser -->
-                <iframe src="https://www.youtube.com/embed/sI1dCHq_e80" title="Nossa Música" frameborder="0"
+                <iframe src="https://www.youtube.com/embed/d4iGRWvlfMY" title="Nossa Música" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </div>
         </section>
 
+        <!-- ESPAÇO DO VÍDEO DECLARAÇÃO -->
         <section class="video-section reveal" style="margin-top: 40px;">
-            <h2 class="section-title">Uma mensagem pra você...</h2>
+            <h2 class="section-title">Uma mensagem para ti...</h2>
             <div class="video-container"
                 style="background: rgba(255,255,255,0.4); border: 2px dashed var(--primary-color);">
                 <!-- ============================================== -->
-                <!-- COLOQUE SEU VÍDEO DE DECLARAÇÃO AQUI DEPOIS    -->
-                <!-- Substitua este texto pelo código <video>       -->
+                <!-- COLOCA O TEU VÍDEO DE DECLARAÇÃO AQUI DEPOIS   -->
+                <!-- Substitui este texto pelo código <video>       -->
                 <!-- ============================================== -->
                 <div
                     style="position: absolute; top:0; left:0; width:100%; height:100%; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 500; color: var(--primary-color); padding: 20px;">
-                    Seu vídeo surpresa será colocado aqui!
-                </div>
-            </div>
-        </section>
-
-        <section class="letter-section reveal">
-            <div class="letter-card">
-                <h2 class="letter-title">Para a mulher da minha vida,</h2>
-                <div class="letter-content">
-                    <p>Meu amor,</p>
-                    <p>Hoje é o seu dia, mas eu sinto que o presente é meu todos os dias por ter você ao meu lado. Sua
-                        força, sua doçura e seu sorriso iluminam os meus dias...</p>
-                    <p>Eu queria criar algo único para te lembrar do quanto você é especial, do quanto eu te admiro e te
-                        amo. Cada detalhe aqui foi feito pensando em você e nos momentos incríveis que já vivemos.</p>
-                    <p>Obrigado por ser essa mulher incrível. Que a gente continue construindo uma história linda
-                        juntos, cheia de amor, parceria e muita felicidade.</p>
-                    <p class="signature">Com todo o meu amor,<br>Seu namorado.</p>
+                    O teu vídeo surpresa será colocado aqui! (Podes substituir este div)
                 </div>
             </div>
         </section>
 
         <footer>
-            <p>Feito com ❤️ para você</p>
+            <p>Feito com ❤️ para ti</p>
         </footer>
     </div>
+
     <script src="script.js"></script>
 </body>
 

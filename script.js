@@ -1,60 +1,97 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     const loginScreen = document.getElementById('login-screen');
     const mainContent = document.getElementById('main-content');
     const passwordInput = document.getElementById('password');
     const loginBtn = document.getElementById('login-btn');
     const errorMessage = document.getElementById('error-message');
+    const typewriterElement = document.getElementById('typewriter-text');
+    const loginForm = document.getElementById('login-form');
 
-    // Senha definida nos requisitos
     const CORRECT_PASSWORD = '26042024';
 
+    // =========================================
+    // 1. EFEITO MÁQUINA DE ESCREVER (Login Escuro)
+    // =========================================
+    const textToType = "Área restrita. Apenas a dona do meu coração tem a chave de acesso. Insere a data em que tudo mudou...";
+    let charIndex = 0;
+    let isTyping = true;
+
+    function typeWriter() {
+        if (charIndex < textToType.length) {
+            typewriterElement.innerHTML += textToType.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeWriter, 50); // Velocidade de digitação
+        } else {
+            isTyping = false;
+            // Após digitar, revela o input e botão
+            setTimeout(() => {
+                loginForm.classList.remove('hidden');
+                loginForm.classList.add('fade-in-element');
+                passwordInput.focus();
+            }, 600);
+        }
+    }
+
+    // Iniciar a máquina de escrever 1 segundo após carregar a página
+    setTimeout(typeWriter, 800);
+
+    // Permitir pular o efeito de digitação caso clique na tela
+    document.addEventListener('click', (e) => {
+        if (isTyping && e.target.closest('#login-screen')) {
+            isTyping = false;
+            charIndex = textToType.length;
+            typewriterElement.innerHTML = textToType;
+            loginForm.classList.remove('hidden');
+            loginForm.classList.add('fade-in-element');
+            passwordInput.focus();
+        }
+    });
+
+    // =========================================
+    // 2. LÓGICA DE SENHA E TRANSIÇÃO
+    // =========================================
     function attemptLogin() {
         const enteredPassword = passwordInput.value.trim();
 
         if (enteredPassword === CORRECT_PASSWORD) {
-            // Senha correta
+            // Senha Correta - Efeito de Dissolver o escuro
             errorMessage.classList.remove('show');
+            loginForm.style.opacity = '0';
+            typewriterElement.style.opacity = '0';
 
-            // Fazer fade out da tela de login
-            loginScreen.classList.remove('fade-in');
+            // Suaviza a tela preta até ficar transparente
+            loginScreen.style.opacity = '0';
 
             setTimeout(() => {
-                // Esconder tela de login completamente da estrutura
-                loginScreen.classList.remove('active', 'flex-center');
+                // Remove a tela preta
+                loginScreen.classList.remove('active');
+                loginScreen.style.display = 'none';
 
-                // Rolar pagina para o topo (útil no mobile)
-                window.scrollTo(0, 0);
-
-                // Mostrar a estrutura principal
+                // Exibe a página principal rosa aos poucos
                 mainContent.classList.add('active');
 
-                // Pequeno atraso para o navegador registrar o display antes de aplicar opacidade (fade-in)
-                setTimeout(() => {
-                    mainContent.classList.add('fade-in');
-                    startHearts();
-                    initScrollReveal();
-                }, 50);
+                // Iniciar os efeitos maravilhosos
+                startHearts();
+                initScrollReveal();
 
-            }, 800); // tempo exato da transição do CSS
+            }, 1000); // 1.0s, aguarda o fade-out do login concluir
 
         } else {
-            // Senha Incorreta
+            // Senha Incorreta - Tremidinha
             errorMessage.classList.add('show');
 
-            // Animação de tremor (shake) no campo de texto para feedback visual fofo
             passwordInput.style.transform = 'translateX(-10px)';
             setTimeout(() => passwordInput.style.transform = 'translateX(10px)', 100);
             setTimeout(() => passwordInput.style.transform = 'translateX(-10px)', 200);
             setTimeout(() => passwordInput.style.transform = 'translateX(10px)', 300);
             setTimeout(() => passwordInput.style.transform = 'translateX(0)', 400);
 
-            // Limpa o campo e foca novamente
             passwordInput.value = '';
             passwordInput.focus();
         }
     }
 
-    // Eventos de click e tecla "Enter"
     loginBtn.addEventListener('click', attemptLogin);
 
     passwordInput.addEventListener('keypress', (e) => {
@@ -63,56 +100,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Focar no input automaticamente ao abrir
-    passwordInput.focus();
 
-    // =============== EFEITOS VISUAIS =============== //
+    // =========================================
+    // 3. EFEITOS VISUAIS E SCROLL
+    // =========================================
 
-    // Função para criar corações caindo
     function createHeart() {
         const heart = document.createElement('div');
         heart.classList.add('floating-heart');
 
-        // Configurações aleatórias para o coração
-        const size = Math.random() * 15 + 10; // 10px a 25px
+        const size = Math.random() * 15 + 10;
         heart.style.width = `${size}px`;
         heart.style.height = `${size}px`;
         heart.style.left = `${Math.random() * 100}vw`;
-        heart.style.animationDuration = `${Math.random() * 3 + 4}s`; // 4s a 7s
-        heart.style.setProperty('--heart-opacity', Math.random() * 0.5 + 0.3); // 0.3 a 0.8
+        heart.style.animationDuration = `${Math.random() * 3 + 4}s`;
+        heart.style.setProperty('--heart-opacity', Math.random() * 0.4 + 0.2);
 
-        // Símbolos românticos
         const hearts = ['❤️', '💖', '💕', '🌸', '✨'];
         heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
         heart.style.fontSize = `${size}px`;
 
         document.body.appendChild(heart);
 
-        // Remove o coração após a animação
-        setTimeout(() => {
-            heart.remove();
-        }, 7000);
+        setTimeout(() => heart.remove(), 7000);
     }
 
     let heartInterval;
     function startHearts() {
-        // Criar corações iniciais
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 6; i++) {
             setTimeout(createHeart, Math.random() * 2000);
         }
-        heartInterval = setInterval(createHeart, 400); // 1 coração a cada 400ms
+        heartInterval = setInterval(createHeart, 500);
     }
 
-    // Função para efeito Reveal no Scroll
+    // Scroll Reveal
     function initScrollReveal() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('revealed');
-                    observer.unobserve(entry.target); // Anima apenas 1 vez
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     }
