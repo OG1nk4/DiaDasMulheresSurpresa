@@ -373,22 +373,23 @@ button:hover {
     padding-top: 15px;
     font-family: 'Dancing Script', cursive;
     color: #888;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 /* Verso da Polaroid */
 .flip-card-back {
     transform: rotateY(180deg);
-    padding: 30px 20px;
+    padding: 20px 15px;
     background: #fffafa;
     align-items: center;
     justify-content: center;
     border: 1px solid #ffe6ea;
+    overflow-y: auto;
 }
 
 .flip-card-back p {
     font-family: 'Dancing Script', cursive;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     color: var(--primary-color);
     line-height: 1.4;
 }
