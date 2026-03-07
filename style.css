@@ -525,273 +525,111 @@ footer {
 }
 
 /* ========================================= */
-/* VÍDEO DECLARAÇÃO PERSONALIZADO            */
+/* YOUTUBE SHORTS E CORAÇÕES ANIMADOS        */
 /* ========================================= */
-
-.custom-video-section {
-    margin-top: 60px;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .custom-video-wrapper {
     position: relative;
-    width: 100%;
-    max-width: 800px;
-    padding: 20px 0;
+    padding: 40px 0;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-/* Corações decorativos em volta */
+.shorts-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 10;
+    background: #000;
+}
+
+.shorts-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modern-glow {
+    box-shadow: 0 0 25px rgba(255, 77, 133, 0.4), 0 0 50px rgba(255, 77, 133, 0.2);
+    animation: glow-pulse 3s infinite alternate;
+    border: 3px solid var(--primary-light);
+}
+
+@keyframes glow-pulse {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 77, 133, 0.3), 0 0 40px rgba(255, 77, 133, 0.1);
+    }
+
+    100% {
+        box-shadow: 0 0 35px rgba(255, 77, 133, 0.6), 0 0 70px rgba(255, 77, 133, 0.3);
+    }
+}
+
+/* Corações flutuantes ao redor do vídeo */
 .dec-heart {
     position: absolute;
-    font-size: 2rem;
-    animation: floatHeart 3s ease-in-out infinite alternate;
+    font-size: 1.5rem;
+    animation: heart-float 4s ease-in-out infinite alternate;
     z-index: 5;
-    pointer-events: none;
-    text-shadow: 0 2px 10px rgba(255, 77, 133, 0.4);
+    opacity: 0.8;
+}
+
+@keyframes heart-float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-30px) scale(1.15);
+        opacity: 1;
+        filter: drop-shadow(0 0 10px rgba(255, 77, 133, 0.8));
+    }
 }
 
 .heart-1 {
-    top: -10px;
-    left: -10px;
+    top: 5%;
+    left: 0%;
     animation-delay: 0s;
+    font-size: 2rem;
 }
 
 .heart-2 {
-    top: 40%;
-    right: -25px;
-    animation-delay: 0.5s;
+    top: 20%;
+    right: 0%;
+    animation-delay: 1.2s;
     font-size: 1.5rem;
 }
 
 .heart-3 {
-    bottom: -15px;
-    left: 20%;
-    animation-delay: 1s;
-    font-size: 2.2rem;
-}
-
-.heart-4 {
-    top: 10%;
-    right: 10%;
-    animation-delay: 1.5s;
-}
-
-.heart-5 {
-    bottom: 20%;
-    left: -20px;
-    animation-delay: 2s;
+    bottom: 25%;
+    left: -5%;
+    animation-delay: 2.1s;
     font-size: 1.8rem;
 }
 
-.heart-6 {
-    bottom: -10px;
-    right: -5px;
-    animation-delay: 2.5s;
+.heart-4 {
+    bottom: 10%;
+    right: -5%;
+    animation-delay: 0.5s;
+    font-size: 2.2rem;
 }
 
-@keyframes floatHeart {
-    0% {
-        transform: translateY(0) rotate(-5deg);
-    }
-
-    100% {
-        transform: translateY(-15px) rotate(5deg);
-    }
-}
-
-.custom-video-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(255, 77, 133, 0.3);
-    border: 4px solid var(--primary-color);
-    background: #000;
-    line-height: 0;
-}
-
-.modern-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
-
-/* Overlay Play Button Grandes */
-.large-play-overlay {
-    position: absolute;
+.heart-5 {
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 77, 133, 0.8);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    left: -10%;
+    animation-delay: 1.5s;
+    font-size: 1.2rem;
 }
 
-.large-play-overlay:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-    background: rgba(255, 77, 133, 1);
-}
-
-.large-play-overlay .icon {
-    width: 40px;
-    height: 40px;
-    fill: #fff;
-    margin-left: 5px;
-    /* adjust for optical center of play icon */
-}
-
-.large-play-overlay.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-/* Controles Personalizados */
-.video-controls {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 15px 15px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: 11;
-}
-
-.custom-video-container:hover .video-controls,
-.video-controls.active {
-    opacity: 1;
-}
-
-.control-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    margin: 0;
-    box-shadow: none;
-    transition: transform 0.2s;
-}
-
-.control-btn:hover {
-    background: none;
-    transform: scale(1.1);
-}
-
-.control-btn .icon {
-    width: 28px;
-    height: 28px;
-    fill: #fff;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-}
-
-.progress-container {
-    flex-grow: 1;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.progress-bar {
-    height: 100%;
-    background: var(--primary-color);
-    width: 0%;
-    border-radius: 4px;
-    box-shadow: 0 0 10px var(--primary-color);
-    pointer-events: none;
-}
-
-.time-display {
-    color: #fff;
-    font-size: 0.9rem;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.volume-container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.volume-slider {
-    width: 0;
-    opacity: 0;
-    transition: width 0.3s, opacity 0.3s;
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-}
-
-.volume-container:hover .volume-slider {
-    width: 70px;
-    opacity: 1;
-}
-
-.volume-slider::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 2px;
-}
-
-.volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    margin-top: -4px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 600px) {
-    .volume-slider {
-        display: none;
-    }
-
-    .custom-video-wrapper {
-        padding: 5px;
-    }
-
-    .dec-heart {
-        font-size: 1.5rem !important;
-    }
-
-    .heart-2 {
-        right: -10px;
-    }
-
-    .heart-5 {
-        left: -5px;
-    }
+.heart-6 {
+    top: 60%;
+    right: -10%;
+    animation-delay: 2.5s;
+    font-size: 1.6rem;
 }
