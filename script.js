@@ -60,22 +60,38 @@ document.addEventListener('DOMContentLoaded', () => {
             loginForm.style.opacity = '0';
             typewriterElement.style.opacity = '0';
 
-            // Suaviza a tela preta até ficar transparente
-            loginScreen.style.opacity = '0';
-
             setTimeout(() => {
-                // Remove a tela preta
-                loginScreen.classList.remove('active');
-                loginScreen.style.display = 'none';
+                loginForm.style.display = 'none';
+                typewriterElement.style.display = 'none';
 
-                // Exibe a página principal rosa aos poucos
-                mainContent.classList.add('active');
+                const audioBtn = document.createElement('button');
+                audioBtn.className = 'enter-audio-btn fade-in-element';
+                audioBtn.innerHTML = 'Coloque os fones e dê o play para uma experiência melhor 🎧';
+                document.querySelector('.password-box').appendChild(audioBtn);
 
-                // Iniciar os efeitos maravilhosos
-                startHearts();
-                initScrollReveal();
+                audioBtn.addEventListener('click', () => {
+                    const bgMusic = document.getElementById('bg-music');
+                    if (bgMusic) bgMusic.play().catch(e => console.log('Autoplay bloqueado', e));
 
-            }, 1000); // 1.0s, aguarda o fade-out do login concluir
+                    // Suaviza a tela preta até ficar transparente
+                    loginScreen.style.opacity = '0';
+
+                    setTimeout(() => {
+                        // Remove a tela preta
+                        loginScreen.classList.remove('active');
+                        loginScreen.style.display = 'none';
+
+                        // Exibe a página principal rosa aos poucos
+                        mainContent.classList.add('active');
+
+                        // Iniciar os efeitos maravilhosos
+                        startHearts();
+                        initScrollReveal();
+
+                    }, 1000); // 1.0s, aguarda o fade-out do login concluir
+                });
+            }, 600); // Espera o fade do formulário acabar
+
 
         } else {
             // Senha Incorreta - Tremidinha
